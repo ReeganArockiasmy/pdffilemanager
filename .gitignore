@@ -1,0 +1,5 @@
+# All pdf file
+*.pdf
+# ignore all tilde files
+*~
+
