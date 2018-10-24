@@ -18,7 +18,7 @@ get_id() {
     else
 	let "id=id+1"
     fi
-    echo $id
+    return $id
 }
 
 
