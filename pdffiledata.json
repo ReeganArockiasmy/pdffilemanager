@@ -1,0 +1,11 @@
+{
+ "alan.pdf": {
+  "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
+  "tag": "jenkins"
+ }
+,
+ "Flashing_Procedure_TataQ5_M2.pdf": {
+  "location": "\/home\/visteon\/autograde\/Tools\/Autogrator\/doc\/",
+  "tag": "flash"
+ }
+}
