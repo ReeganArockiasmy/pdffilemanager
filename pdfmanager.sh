@@ -10,6 +10,34 @@ usage() {
     exit 1
 }
 
+
+#interactive shell script mode
+interactive(){
+    select var in open next inshell quit
+do
+    case $var in
+	open|1 )
+	    read -p "pagenumber: " num
+	    evince -p $num -l $pattern $location$name
+	    ;;
+	next|2) 
+	    break
+	    ;;
+	inshell|3 )
+	    read -p "pagenumber: " num
+	    
+	    ;;
+	quit|q )
+	    exit 0
+	    ;;
+	*)
+	    echo "anything"
+	    ;;
+    esac
+    done
+}
+
+
 if [ $# -gt 0 ];
 then
     while [ "$1" != "" ];
@@ -45,8 +73,7 @@ do
 	location=`jshon -e $name -e location < $database`
         location=$(echo $location | sed -e 's/\\//g' -e 's/^.\(.*\).$/\1/')
 	pdfgrep -H --color always -n -i $pattern $location$name
+	interactive
     fi
 done
-
-
 

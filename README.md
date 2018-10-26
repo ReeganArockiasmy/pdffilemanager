@@ -19,6 +19,8 @@ jshon -n {} -n {} -s "/foo/foo/" -i "Path"  -s "java" -i tag -i "PdfFileName"
 	 }
 }
 
+pdfgrep example
+pdfgrep -H --color always -n -i <pattern> <pdffile>
 
 * findfile.sh
 
@@ -31,6 +33,7 @@ ref https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-fi
 ** ignoredir.txt file do put "/" in ending folder path string
 
 ** Name, Location,Tags, Priroity
+
 
 
 
