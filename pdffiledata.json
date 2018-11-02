@@ -8,4 +8,44 @@
   "location": "\/home\/visteon\/autograde\/Tools\/Autogrator\/doc\/",
   "tag": "flash"
  }
+,
+ "alan.pdf": {
+  "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
+  "tag": "python"
+ }
+,
+ "alan1.pdf": {
+  "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
+  "tag": "python"
+ }
+,
+ "alan.pdf": {
+  "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
+  "tag": "python"
+ }
+,
+ "CardStatement_2018-06-21.pdf": {
+  "location": "\/media\/sf_VMShar\/",
+  "tag": "bank"
+ }
+,
+ "CardStatement_2018-07-21.pdf": {
+  "location": "\/media\/sf_VMShar\/",
+  "tag": "bank"
+ }
+,
+ "CardStatement_2018-09-21.pdf": {
+  "location": "\/media\/sf_VMShar\/",
+  "tag": "bank"
+ }
+,
+ "CardStatement_2018-10-21.pdf": {
+  "location": "\/media\/sf_VMShar\/",
+  "tag": "bank"
+ }
+,
+ "javabook.pdf": {
+  "location": "\/media\/sf_VMShar\/",
+  "tag": "java"
+ }
 }

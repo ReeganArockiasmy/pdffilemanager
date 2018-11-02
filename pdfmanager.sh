@@ -25,7 +25,7 @@ do
 	    ;;
 	inshell|3 )
 	    read -p "pagenumber: " num
-	    
+	    pdftotext -f $num -l $num -layout $location$name -
 	    ;;
 	quit|q )
 	    exit 0
@@ -36,7 +36,6 @@ do
     esac
     done
 }
-
 
 if [ $# -gt 0 ];
 then
@@ -72,7 +71,7 @@ do
     then
 	location=`jshon -e $name -e location < $database`
         location=$(echo $location | sed -e 's/\\//g' -e 's/^.\(.*\).$/\1/')
-	pdfgrep -H --color always -n -i $pattern $location$name
+	timeout 10 pdfgrep -H --color always -n -i $pattern $location$name
 	interactive
     fi
 done

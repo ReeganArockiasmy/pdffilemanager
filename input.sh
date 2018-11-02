@@ -22,6 +22,5 @@ else
     sed -i '$d' $database
     echo "," >> $database
 fi
-# remove the first
+# remove the first jshon output and redirect the file
 eval $cmd | sed -n '1!p' >> $database
-

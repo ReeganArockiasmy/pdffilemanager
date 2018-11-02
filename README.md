@@ -35,6 +35,18 @@ ref https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-fi
 ** Name, Location,Tags, Priroity
 
 
+** pdftotext
+
+convert page 25
+
+pdftotext -f 25 -l 25 <pdffile>
+
+pdftotext -f 29 -l 29 -layout javabook.pdf -
+"-" here used pdffile not save to any textfile it is print to stdout
+-layout is used print like a pdfpage
+ 
+
+
 
 
 ref
