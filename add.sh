@@ -42,6 +42,7 @@ then
     then
 	expect <<EOF
 set timeout -1
+log_user 0
 spawn ./input.sh
 expect "name\r"
 send -- "$filename\r"
