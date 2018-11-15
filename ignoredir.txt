@@ -1,0 +1,4 @@
+/home/visteon/Downloads/package/emacs-25.3
+/home/visteon/Downloads/package/pycharm-community-2018.1.1/help
+/home/visteon/.PyCharmCE2018.1
+/home/visteon/.local

@@ -1,6 +1,18 @@
 #! /bin/bash
 jsonfile=pdffiledata.json
 
+# find cmd read the ignoredir text file
+makefindcmd(){
+    findcmd="find $HOME -type d \( "
+    for igndir in `cat ignoredir.txt`
+    do
+	findcmd=$findcmd$"-path "$igndir" -o "
+    done
+    findcmd=${findcmd::-3}
+    findcmd=$findcmd"\) -prune -o -name \"*.pdf\" -print"
+}
+
+
 bookIsThere(){
     if jshon -k < $jsonfile | grep -q $filename
     then
@@ -8,8 +20,8 @@ bookIsThere(){
     fi
 }
 
-#for filepath in `find $HOME -name \*.pdf`
-for filepath in `find $PWD -name \*.pdf`
+makefindcmd
+for filepath in `eval $findcmd`
 do
 filename=$(basename "$filepath")
 dir=$(dirname "$filepath")"/"
