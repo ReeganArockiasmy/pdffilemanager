@@ -16,7 +16,7 @@ makefindcmd(){
 	fi
     done
     findcmd=${findcmd::-3}
-    findcmd=$findcmd"\) -prune -o -name \"*.pdf\" -print"
+    findcmd=$findcmd"\) -prune -o -name \"*.pdf\" -print 2>/dev/null"
     findcmd=$findcmd$grepcmd
 }
 
