@@ -1,18 +1,26 @@
 #! /bin/bash
 jsonfile=pdffiledata.json
+ignorefile=ignoredir.txt
 
-# find cmd read the ignoredir text file
+# find cmd read the ignoredir and text file
 makefindcmd(){
     findcmd="find $HOME -type d \( "
-    for igndir in `cat ignoredir.txt`
+    grepcmd=""
+    for igndir in `cat $ignorefile`
     do
-	findcmd=$findcmd$"-path "$igndir" -o "
+	if [[ $igndir == *pdf ]]
+	then
+	    grepcmd=$grepcmd"| grep -v "$igndir
+	else
+	    findcmd=$findcmd$"-path "$igndir" -o "
+	fi
     done
     findcmd=${findcmd::-3}
     findcmd=$findcmd"\) -prune -o -name \"*.pdf\" -print"
+    findcmd=$findcmd$grepcmd
 }
 
-
+# it is check book is avaible in json file
 bookIsThere(){
     if jshon -k < $jsonfile | grep -q $filename
     then
@@ -39,6 +47,7 @@ then
 		break
 		;;
 	    noadd|3 )
+		echo $dir$filename >> $ignorefile
 		break
 		;;
 	    exit|4 )
