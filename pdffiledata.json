@@ -1,51 +1,61 @@
 {
  "alan.pdf": {
   "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
-  "tag": "jenkins"
- }
-,
- "Flashing_Procedure_TataQ5_M2.pdf": {
-  "location": "\/home\/visteon\/autograde\/Tools\/Autogrator\/doc\/",
-  "tag": "flash"
- }
-,
- "alan.pdf": {
-  "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
   "tag": "python"
- }
-,
+ },
  "alan1.pdf": {
   "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
   "tag": "python"
- }
-,
- "alan.pdf": {
-  "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
-  "tag": "python"
- }
-,
+ },
  "CardStatement_2018-06-21.pdf": {
   "location": "\/media\/sf_VMShar\/",
   "tag": "bank"
- }
-,
+ },
  "CardStatement_2018-07-21.pdf": {
   "location": "\/media\/sf_VMShar\/",
   "tag": "bank"
- }
-,
+ },
  "CardStatement_2018-09-21.pdf": {
   "location": "\/media\/sf_VMShar\/",
   "tag": "bank"
- }
-,
+ },
  "CardStatement_2018-10-21.pdf": {
   "location": "\/media\/sf_VMShar\/",
   "tag": "bank"
- }
-,
+ },
  "javabook.pdf": {
   "location": "\/media\/sf_VMShar\/",
   "tag": "java"
+ },
+ "tmux_asiabsdcon11.pdf": {
+  "location": "\/home\/visteon\/tmate\/tmate\/presentations\/",
+  "tag": "java"
+ },
+ "omit.pdf": {
+  "location": "\/home\/visteon\/tmp\/",
+  "tag": "python"
+ },
+ "ReferenceCardForMac.pdf": {
+  "location": "\/home\/visteon\/pycharm-community-2018.2\/help\/",
+  "tag": "flush"
+ },
+ "reegan": {
+  "location": "\/home\/visteon\/",
+  "tag": "java"
+ }
+,
+ "testing": {
+  "location": "\/home\/visteon\/",
+  "tag": "java"
+ }
+,
+ "tes": {
+  "location": "\/home\/visteon\/",
+  "tag": "pyton"
+ }
+,
+ "faiz": {
+  "location": "\/home\/visteon\/",
+  "tag": "pyton"
  }
 }

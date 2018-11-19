@@ -13,8 +13,7 @@ filetobelook() {
 	then
 	    echo $filename > /dev/null
 	else
-	    echo $location$filename
-	    echo "file not available"
+	    echo $location$filename" file deleted"
 	    jshon -d $filename -I -F $database < $database
 	fi
     done
