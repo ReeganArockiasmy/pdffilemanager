@@ -1,6 +1,6 @@
 #! /bin/bash
 
-database=pdffiledata.json
+#database=pdffiledata.json
 # print all tags
 printtags(){
     
@@ -56,5 +56,4 @@ printall() {
 
 }
 
-printall
 

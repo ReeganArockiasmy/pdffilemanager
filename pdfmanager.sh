@@ -3,10 +3,17 @@
 # pdfmanager -t <tag> -s <string>
 #tag=jenkins
 #pattern=changelog
+
+
+. ./printformat.sh --source-only  # it is load the source
+
 database=pdffiledata.json
 
 usage() {
     echo "pdfmanager -t|--tag <tag> -p|--pattern <string> -h|--help"
+    echo "pdfmanager -l|--list tags"
+    echo "pdfmanager -l|--list books"
+    echo "pdfmanager -l|--list all"
     exit 1
 }
 
@@ -53,6 +60,22 @@ then
 	    -h| --help )
 		usage
 		exit
+		;;
+	    -l| --list )
+		shift
+		if [ "$1" = "tags" ]
+		then
+		    printtags
+		elif [ "$1" = "books" ]
+		then
+		    printbooks
+		elif [ "$1" = "all" ]
+		then
+		     printall
+		else
+		    usage
+		fi 
+		    exit 1
 		;;
 	    * )
 		usage
