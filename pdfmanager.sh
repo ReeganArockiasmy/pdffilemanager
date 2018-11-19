@@ -5,7 +5,9 @@
 #pattern=changelog
 
 
-. ./printformat.sh --source-only  # it is load the source
+. ./printformat.sh --source-only  # it is load the print format source code
+
+. ./add.sh --source-only # it is add bokk source code
 
 database=pdffiledata.json
 
@@ -14,6 +16,8 @@ usage() {
     echo "pdfmanager -l|--list tags"
     echo "pdfmanager -l|--list books"
     echo "pdfmanager -l|--list all"
+    echo "pdfmanager -a|--add"
+    echo "\"list\" and \"add\" use single command alone only"
     exit 1
 }
 
@@ -76,6 +80,10 @@ then
 		    usage
 		fi 
 		    exit 1
+		    ;;
+	    -a| --add )
+		addbook
+		exit
 		;;
 	    * )
 		usage

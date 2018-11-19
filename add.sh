@@ -1,4 +1,5 @@
 #! /bin/bash
+
 jsonfile=pdffiledata.json
 ignorefile=ignoredir.txt
 
@@ -28,40 +29,42 @@ bookIsThere(){
     fi
 }
 
-makefindcmd
-for filepath in `eval $findcmd`
-do
-filename=$(basename "$filepath")
-dir=$(dirname "$filepath")"/"
-if bookIsThere
-then
-    echo $filename
-    select var in open tags noadd exit
+addbook() {
+
+    makefindcmd
+    for filepath in `eval $findcmd`
     do
-	case $var in
-	    open|1 )
-		evince $dir$filename
-		;;
-	    tags|2 )
-		read -p "tags: " tags
-		break
-		;;
-	    noadd|3 )
-		echo $dir$filename >> $ignorefile
-		break
-		;;
-	    exit|4 )
-		exit 0
-		;;
-	    *)
-		echo "anything"
-		;;
-	esac 
-    done
-    
-    if [[ $var != "noadd" ]]
-    then
-	expect <<EOF
+	filename=$(basename "$filepath")
+	dir=$(dirname "$filepath")"/"
+	if bookIsThere
+	then
+	    echo $filename
+	    select var in open tags noadd exit
+	    do
+		case $var in
+		    open|1 )
+			evince $dir$filename
+			;;
+		    tags|2 )
+			read -p "tags: " tags
+			break
+			;;
+		    noadd|3 )
+			echo $dir$filename >> $ignorefile
+			break
+			;;
+		    exit|4 )
+			exit 0
+			;;
+		    *)
+			echo "anything"
+			;;
+		esac 
+	    done
+	    
+	    if [[ $var != "noadd" ]]
+	    then
+		expect <<EOF
 set timeout -1
 log_user 0
 spawn ./input.sh
@@ -73,6 +76,8 @@ expect "tags\r"
 send -- "$tags\r"
 expect eof
 EOF
-    fi
-fi    
-done
+	    fi
+	fi    
+    done
+}
+
