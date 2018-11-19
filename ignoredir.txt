@@ -2,3 +2,7 @@
 /home/visteon/Downloads/package/pycharm-community-2018.1.1/help
 /home/visteon/.PyCharmCE2018.1
 /home/visteon/.local
+/home/visteon/flatfile/pdfmanager/testfil1e.pdf
+/home/visteon/flatfile/pdfmanager/reegan.pdf
+/home/visteon/flatfile/pdfmanager/testfile.pdf
+/home/visteon/pycharm-community-2018.2/help/ReferenceCard.pdf
