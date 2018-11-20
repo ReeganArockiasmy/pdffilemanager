@@ -33,7 +33,7 @@ filetobelook() {
 }
 
 userdelete() {
-    echo "Enter the file name"
+    echo "Enter the file no"
     select var in `jshon -k <$database`
     do
 	echo $var
@@ -42,6 +42,5 @@ userdelete() {
     done   
 }
 
-
-#filetobelook
-userdelete
+# filetobelook
+# userdelete
