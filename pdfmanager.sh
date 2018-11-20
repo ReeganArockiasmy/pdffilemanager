@@ -9,8 +9,9 @@
 
 . ./add.sh --source-only # it is add bokk source code
 
-. ./delete.sh --source-only # is is add delete source code
+. ./delete.sh --source-only # it is add delete source code
 
+. ./update.sh --source-only # it is add update source code
 database=pdffiledata.json
 
 usage() {
@@ -18,6 +19,7 @@ usage() {
     echo "pdfmanager -l|--list tags|books|all"
     echo "pdfmanager -a|--add"
     echo "pdfmanager -d|--delete self|user"
+    echo "pdfmanager -u|--update"
     echo "\"list\" and \"add\" use single command alone only"
     exit 1
 }
@@ -98,6 +100,10 @@ then
 		    
 	    -a| --add )
 		addbook
+		exit
+		;;
+	    -u| --update )
+		improve
 		exit
 		;;
 	    * )
