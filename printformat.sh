@@ -42,8 +42,7 @@ printall() {
     padlength=$((padlength+1))
     padmax=`jshon -k < $database | wc -L`
     padmax=$((padlength+padmax))
-    echo $padmax
-    pad=$(printf '%0.1s' " "{1..42}) # replace padmax in 42
+    pad=$(printf '%0.s ' $(seq 1 $padmax))
     printline
     for name in `jshon -k < pdffiledata.json`
     do
