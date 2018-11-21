@@ -1,61 +1,33 @@
 {
- "alan.pdf": {
+ "javabook.pdf": {
   "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
-  "tag": "python"
- },
+  "tag": [
+   "test",
+   "python",
+   "java"
+  ]
+ }
+,
  "alan1.pdf": {
   "location": "\/home\/visteon\/flatfile\/pdfmanager\/",
-  "tag": "python"
- },
- "CardStatement_2018-06-21.pdf": {
-  "location": "\/media\/sf_VMShar\/",
-  "tag": "bank"
- },
- "CardStatement_2018-07-21.pdf": {
-  "location": "\/media\/sf_VMShar\/",
-  "tag": "bank"
- },
- "CardStatement_2018-09-21.pdf": {
-  "location": "\/media\/sf_VMShar\/",
-  "tag": "bank"
- },
- "CardStatement_2018-10-21.pdf": {
-  "location": "\/media\/sf_VMShar\/",
-  "tag": "bank"
- },
- "javabook.pdf": {
-  "location": "\/media\/sf_VMShar\/",
-  "tag": "java"
- },
+  "tag": [
+   "2"
+  ]
+ }
+,
  "tmux_asiabsdcon11.pdf": {
   "location": "\/home\/visteon\/tmate\/tmate\/presentations\/",
-  "tag": "java"
- },
- "omit.pdf": {
-  "location": "\/home\/visteon\/tmp\/",
-  "tag": "python"
- },
+  "tag": [
+   "tested",
+   "java",
+   "python"
+  ]
+ }
+,
  "ReferenceCardForMac.pdf": {
   "location": "\/home\/visteon\/pycharm-community-2018.2\/help\/",
-  "tag": "flush"
- },
- "reegan": {
-  "location": "\/home\/visteon\/",
-  "tag": "java"
- }
-,
- "testing": {
-  "location": "\/home\/visteon\/",
-  "tag": "java"
- }
-,
- "tes": {
-  "location": "\/home\/visteon\/",
-  "tag": "pyton"
- }
-,
- "faiz": {
-  "location": "\/home\/visteon\/",
-  "tag": "pyton"
+  "tag": [
+   "flush"
+  ]
  }
 }
