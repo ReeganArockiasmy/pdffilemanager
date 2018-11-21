@@ -11,8 +11,15 @@ do
     declare "${key}"=$value
 done
 
+#multipletag
+tagcmd="[]"
+for tag in $(echo $tags | tr "," "\n")
+do
+    tagcmd=$tagcmd" -s "$tag" -i 0"
+done
+
 # make jshon command
-cmd="jshon -Q -n {} -n {} -s $location -i location -s $tags -i tag -i $name"
+cmd="jshon -Q -n {} -n {} -s $location -i location -n $tagcmd -i tag -i $name"
 
 #manipulate the jshon output
 if [ ! -f $database ]
