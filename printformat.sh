@@ -6,8 +6,8 @@ printtags(){
     
     for name in `jshon -k < $database`
     do
-	jshon -e $name -e tag < $database
-    done | sort | uniq 
+	jshon -e $name -e tag < $database | tr -d "[],"
+    done | sort | uniq | sed '/^\s*$/d'
 }
 
 # print all books
@@ -34,23 +34,26 @@ printline() {
 #https://stackoverflow.com/questions/4409399/padding-characters-in-printf
 printall() {
     padlength=$(
-	for name in `jshon -k < pdffiledata.json`
+	for name in `jshon -k < $database`
 	do
-	    jshon -e $name -e tag < pdffiledata.json
-	done | sort | uniq | wc -L  
+	    jshon -e $name -e tag < $database | tr -d "[],"
+	done | sort | uniq | sed '/^\s*$/d' | wc -L  
 	 )
     padlength=$((padlength+1))
     padmax=`jshon -k < $database | wc -L`
     padmax=$((padlength+padmax))
     pad=$(printf '%0.s ' $(seq 1 $padmax))
     printline
-    for name in `jshon -k < pdffiledata.json`
+    for name in `jshon -k < $database`
     do
 	
-	var1=`jshon -e $name -e tag < pdffiledata.json`
-	printf "%s" "$var1"
-	printf '%*.*s' 0 $((padlength - ${#var1} )) "$pad"
-	printf "%s\n" "$name"
+	var1=`jshon -e $name -e tag < $database | tr -d "[]," | sed '/^\s*$/d'`
+	for i in $var1
+	do
+	    printf "%s" "$i"
+	    printf '%*.*s' 0 $((padlength - ${#i} )) "$pad"
+	    printf "%s\n" "$name"
+	done
     done
 
 }

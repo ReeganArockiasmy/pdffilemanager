@@ -118,13 +118,16 @@ fi
 
 for name in `jshon -k < $database`
 do
-    result=`jshon -e $name -e tag < $database`
-    if [ \"$tag\" == $result ]
-    then
-	location=`jshon -e $name -e location < $database`
-        location=$(echo $location | sed -e 's/\\//g' -e 's/^.\(.*\).$/\1/')
-	timeout 10 pdfgrep -H --color always -n -i $pattern $location$name
-	interactive
-    fi
+    results=`jshon -e $name -e tag < $database | tr -d "[],"`
+    for result in $results
+    do	
+	if [ \"$tag\" == $result ]
+	then
+    	    location=`jshon -e $name -e location < $database`
+            location=$(echo $location | sed -e 's/\\//g' -e 's/^.\(.*\).$/\1/')
+    	    timeout 10 pdfgrep -H --color always -n -i $pattern $location$name
+    	    interactive
+	fi
+    done
 done
 
